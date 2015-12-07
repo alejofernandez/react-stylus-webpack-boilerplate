@@ -21,9 +21,11 @@ Tecnology stack:
 
 ### To run locally
 * `gulp serve`
+* `open http://localhost:3000`
 
 ### To build distributable files
 * `gulp build`
 
 ### To deploy to github pages
-* `gulp deploy` (binary files are not working correctly)
+* `gulp deploy`
+* `open http://<your-github-account>.github.io/<your-repo-name>`

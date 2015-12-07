@@ -28,11 +28,16 @@ gulp.task('static', function() {
   ;
 });
 
-gulp.task('bundle', function() {
-  return gulp.src('src/index.js')
-    .pipe(webpackStream(productionConfig))
-    .pipe(gulp.dest('dist/'))
-  ;
+gulp.task('bundle', function (done) {
+  webpack(productionConfig).run(function(err, stats) {
+    if (err) {
+      console.log('Error', err);
+    } else {
+      console.log(stats.toString());
+    }
+
+    if (done) done();
+  });
 });
 
 gulp.task('build', ['static', 'bundle']);

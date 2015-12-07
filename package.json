@@ -38,8 +38,7 @@
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.4.2",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1",
-    "webpack-stream": "^2.3.0"
+    "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
     "history": "^1.13.1",

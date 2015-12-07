@@ -12,6 +12,8 @@ Tecnology stack:
 * `webpack` for development and production bundling
 * `webpack-dev-server` for running locally, with hot reloading (styles, jsx, images, files)
 
+You can check a running version here: https://alejofernandez.github.io/react-stylus-webpack-boilerplate
+
 ## How to use this starter kit
 ### Install gulp
 * `npm install -g gulp`
@@ -27,7 +29,8 @@ Tecnology stack:
 * `gulp build`
 
 ### To deploy to github pages
-* `gulp deploy` (binary files are not working correctly)
+* `gulp deploy`
+* `open http://<your-github-account>.github.io/<your-repo-name>`
 
 ## About this boilerplate
 #### Folder structure:
@@ -121,8 +124,10 @@ export default class Header extends Component {
   position: relative
 ```
 
-
 ### Todo:
+* Document how scoping of styles work
 * Add more documentation and `how-to` samples
-* Fix deploy to github pages
+* Add `eslint` support
 * Include a testing framework
+* Include source maps
+* Include a pre-render option to avoid FOUC

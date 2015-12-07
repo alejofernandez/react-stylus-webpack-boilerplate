@@ -1,7 +1,8 @@
-var path    = require('path');
+var path = require('path');
 
 module.exports = {
   devtool: 'eval',
+  entry: ['./src/index'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'static/bundle.js'
@@ -16,7 +17,7 @@ module.exports = {
       loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus-loader'
     }, {
       test: /\.woff$/,
-      loader: 'file-loader?name=font/[name].[ext]'
+      loader: 'file-loader?name=font/[name].[ext]&mimetype=application/font-woff'
     }, {
       test: /\.png$/,
       loader: 'file-loader?name=images/[name].[ext]'
