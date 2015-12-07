@@ -13,6 +13,7 @@ Tecnology stack:
 * `webpack-dev-server` for running locally, with hot reloading (styles, jsx, images, files)
 
 You can check a running version here: https://alejofernandez.github.io/react-stylus-webpack-boilerplate
+![react-stylus-webpack-boilerplate](https://cloud.githubusercontent.com/assets/1288192/11636862/0db1255e-9cfd-11e5-90f5-a02b229613aa.png)
 
 ## How to use this starter kit
 ### Install gulp
