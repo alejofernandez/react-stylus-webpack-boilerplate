@@ -16,10 +16,10 @@ module.exports = {
       loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus-loader'
     }, {
       test: /\.woff$/,
-      loader: 'file-loader?name=font/[name].[ext]?[hash]'
+      loader: 'file-loader?name=font/[name].[ext]'
     }, {
       test: /\.png$/,
-      loader: 'file-loader?name=images/[name].[ext]?[hash]'
+      loader: 'file-loader?name=images/[name].[ext]'
     }, {
       test: /\.md$/,
       loader: "html!markdown"
