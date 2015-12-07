@@ -1,4 +1,5 @@
-var path = require('path');
+var path              = require('path');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   devtool: 'eval',
@@ -14,7 +15,7 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, {
       test: /\.styl$/,
-      loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus-loader'
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!autoprefixer-loader!stylus-loader')
     }, {
       test: /\.woff$/,
       loader: 'file-loader?name=font/[name].[ext]&mimetype=application/font-woff'
@@ -23,7 +24,10 @@ module.exports = {
       loader: 'file-loader?name=images/[name].[ext]'
     }, {
       test: /\.md$/,
-      loader: "html!markdown"
+      loader: 'html!markdown'
     }]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('static/styles.css', {allChunks: false})
+  ]
 };

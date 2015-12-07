@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/AlejoFernandez/react-stylus-webpack-boilerplate#readme",
   "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
     "babel-core": "^6.0.20",
     "babel-eslint": "^4.1.3",
     "babel-loader": "^6.0.1",
@@ -29,6 +30,7 @@
     "babel-preset-stage-0": "^6.0.15",
     "css-loader": "^0.23.0",
     "eslint-plugin-react": "^3.6.2",
+    "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
     "gulp": "^3.9.0",
     "gulp-gh-pages": "^0.5.4",
