@@ -3,7 +3,8 @@
 .header
   background-color: get-deep-orange()
   color: get-white()
-  padding: 60px 20px 50px 30px
+  padding: 60px 20px 50px 110px
+  position: relative
 
   h1
     margin: 0
@@ -11,7 +12,48 @@
     font-weight: 600
     font-style: italic
 
+    a
+      color: get-white()
+      &:hover
+        color: get-white()
+      &:before
+        content: ""
+        position: absolute
+        display: inline-block
+        left: 0px
+        top: 45px
+        width: 100px
+        height: 80px
+        background: url("./images/js-logo.png") right center no-repeat
+        background-size: auto 100%
+
   h2
     margin: 12px 0 0 3px
     font-size: 24px
     font-weight: 100
+
+a.stylusLogo
+  position: absolute
+  display: inline-block
+  right: 20px
+  bottom: 10px
+  &:before
+    content: ""
+    display: inline-block
+    width: 60px
+    height: 60px
+    background: url("./images/stylus-logo.png") right center no-repeat
+    background-size: auto 100%
+
+a.reactLogo
+  position: absolute
+  display: inline-block
+  right: 90px
+  bottom: 10px
+  &:before
+    content: ""
+    display: inline-block
+    width: 60px
+    height: 60px
+    background: url("./images/react-logo.png") right center no-repeat
+    background-size: auto 100%
