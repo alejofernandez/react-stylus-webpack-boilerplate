@@ -1,0 +1,42 @@
+get-cyan(s = false)
+  if s == 50
+    rgba(#e0f7fa)
+  else if s == 100
+    rgba(#b2ebf2)
+  else if s == 200
+    rgba(#80deea)
+  else if s == 300
+    rgba(#4dd0e1)
+  else if s == 400
+    rgba(#26c6da)
+  else if s == 500
+    rgba(#00bcd4)
+  else if s == 600
+    rgba(#00acc1)
+  else if s == 700
+    rgba(#0097a7)
+  else if s == 800
+    rgba(#00838f)
+  else if s == 900
+    rgba(#006064)
+  else if s == 1000
+    rgba(#84ffff)
+  else if s == 1100
+    rgba(#18ffff)
+  else if s == 1200
+    rgba(#00e5ff)
+  else if s == 1300
+    rgba(#00b8d4)
+  else
+    rgba(#00bcd4)
+
+bg-cyan(s = false)
+  background-color:get-cyan(s)
+
+text-cyan(s = false)
+  color:get-cyan(s)
+  &:hover
+    color:get-cyan(s)
+
+border-cyan(s = false)
+  border-color:get-cyan(s)
