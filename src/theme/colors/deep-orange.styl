@@ -1,0 +1,42 @@
+get-deep-orange(s = false)
+  if s == 50
+    rgba(#fbe9e7)
+  else if s == 100
+    rgba(#ffccbc)
+  else if s == 200
+    rgba(#ffab91)
+  else if s == 300
+    rgba(#ff8a65)
+  else if s == 400
+    rgba(#ff7043)
+  else if s == 500
+    rgba(#ff5722)
+  else if s == 600
+    rgba(#f4511e)
+  else if s == 700
+    rgba(#e64a19)
+  else if s == 800
+    rgba(#d84315)
+  else if s == 900
+    rgba(#bf360c)
+  else if s == 1000
+    rgba(#ff9e80)
+  else if s == 1100
+    rgba(#ff6e40)
+  else if s == 1200
+    rgba(#ff3d00)
+  else if s == 1300
+    rgba(#dd2c00)
+  else
+    rgba(#ff5722)
+
+bg-deep-orange(s = false)
+  background-color:get-deep-orange(s)
+
+text-deep-orange(s = false)
+  color:get-deep-orange(s)
+  &:hover
+    color:get-deep-orange(s)
+
+border-deep-orange(s = false)
+  border-color:get-deep-orange(s)
