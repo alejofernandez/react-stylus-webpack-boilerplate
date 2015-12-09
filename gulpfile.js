@@ -21,13 +21,7 @@ gulp.task('serve', function() {
   });
 });
 
-gulp.task('static', function() {
-  return gulp.src('index.html')
-    .pipe(gulp.dest('dist/'))
-  ;
-});
-
-gulp.task('bundle', function (done) {
+gulp.task('build', function (done) {
   webpack(productionConfig).run(function(err, stats) {
     if (err) {
       console.log('Error', err);
@@ -38,8 +32,6 @@ gulp.task('bundle', function (done) {
     if (done) done();
   });
 });
-
-gulp.task('build', ['static', 'bundle']);
 
 gulp.task('deploy', ['build'], function() {
   return gulp.src('./dist/**/*')

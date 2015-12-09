@@ -130,5 +130,4 @@ export default class Header extends Component {
 * Add more documentation and `how-to` samples
 * Add `eslint` support
 * Include a testing framework
-* Include source maps
 * Include a pre-render option to avoid FOUC

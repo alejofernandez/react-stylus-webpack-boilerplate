@@ -1,6 +1,7 @@
-var path    = require('path');
-var webpack = require('webpack');
-var PORT    = 3000;
+var path              = require('path');
+var webpack           = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var PORT              = 3000;
 
 module.exports = {
   port: PORT,
@@ -15,9 +16,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: ''
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   module: {
     loaders: [{
       test: /\.js$/,
@@ -36,5 +34,9 @@ module.exports = {
       test: /\.md$/,
       loader: "html!markdown"
     }]
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({title: 'React-Stylus-Webpack boilerplate'})
+  ]
 };

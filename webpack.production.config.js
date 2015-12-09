@@ -1,5 +1,6 @@
 var path              = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack           = require('webpack');
 
 module.exports = {
@@ -30,6 +31,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('styles.css', {allChunks: false}),
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
+    new webpack.optimize.UglifyJsPlugin({minimize: true}),
+    new HtmlWebpackPlugin({title: 'React-Stylus-Webpack boilerplate'})
   ]
 };
