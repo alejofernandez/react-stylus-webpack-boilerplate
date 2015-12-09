@@ -1,6 +1,6 @@
-import React                        from 'react';
-import {IndexRoute, Route}          from 'react-router';
-import {App, Home, About, NotFound} from './containers';
+import React                                      from 'react';
+import {IndexRoute, Route}                        from 'react-router';
+import {App, Home, About, NotFound, StyleScoping} from './containers';
 
 export default (
   <Route path="/" component={App}>
@@ -9,6 +9,7 @@ export default (
 
     { /* routes */ }
     <Route path="about" component={About}/>
+    <Route path="styles" component={StyleScoping}/>
 
     { /* catch all route */ }
     <Route path="*" component={NotFound} />
