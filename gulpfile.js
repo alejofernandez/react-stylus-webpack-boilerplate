@@ -2,7 +2,6 @@ var gulp             = require('gulp');
 var ghPages          = require('gulp-gh-pages');
 var path             = require('path');
 var webpack          = require('webpack');
-var webpackStream    = require('webpack-stream');
 var WebpackDevServer = require('webpack-dev-server');
 
 var productionConfig = require('./webpack.production.config');
