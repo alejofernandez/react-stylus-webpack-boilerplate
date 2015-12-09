@@ -4,7 +4,7 @@ var PORT    = 3000;
 
 module.exports = {
   port: PORT,
-  devtool: 'eval',
+  devtool: 'eval-source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:' + PORT,
     'webpack/hot/only-dev-server',
@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: ''
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
