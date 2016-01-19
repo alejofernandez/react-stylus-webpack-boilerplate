@@ -124,10 +124,3 @@ export default class Header extends Component {
   padding: 60px 20px 50px 110px
   position: relative
 ```
-
-### Todo:
-* Document how scoping of styles work
-* Add more documentation and `how-to` samples
-* Add `eslint` support
-* Include a testing framework
-* Include a pre-render option to avoid FOUC
