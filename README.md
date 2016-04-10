@@ -7,8 +7,10 @@ Tecnology stack:
 * Client side rendering (leaving isomorphic rendering for later)
 * ES6 with Babel
 * `Stylus` preprocessor for styles
+* `react-jade-loader` for using jade templates instead of JSX
 * Scoped styles using `css-modules` => http://glenmaddern.com/articles/css-modules
 * `gulp` for build automation
+* `eslint` for coding style enforcement
 * `webpack` for development and production bundling
 * `webpack-dev-server` for running locally, with hot reloading (styles, jsx, images, files)
 
