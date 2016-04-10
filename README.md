@@ -16,21 +16,19 @@ You can check a running version here: https://alejofernandez.github.io/react-sty
 ![react-stylus-webpack-boilerplate](https://cloud.githubusercontent.com/assets/1288192/11636862/0db1255e-9cfd-11e5-90f5-a02b229613aa.png)
 
 ## How to use this starter kit
-### Install gulp
-* `npm install -g gulp`
 
 ### Install local modules
 * `npm install`
 
 ### To run locally
-* `gulp serve`
+* `npm run serve`
 * `open http://localhost:3000`
 
 ### To build distributable files
-* `gulp build`
+* `npm run build`
 
 ### To deploy to github pages
-* `gulp deploy`
+* `npm run deploy`
 * `open http://<your-github-account>.github.io/<your-repo-name>`
 
 ## About this boilerplate
@@ -71,46 +69,46 @@ You can check a running version here: https://alejofernandez.github.io/react-sty
 #### Sample container (smart component):
 ```javascript
 // src/containers/App/App.js
-import styles                   from './App.styl';
-import React, {Component}       from 'react';
-import {Footer, Header, Navbar} from '../../components';
+import styles from './App.styl';
+import React from 'react';
+import { Footer, Header, Navbar } from '../../components';
 
-export default class App extends Component {
-  render() {
-    return (
-      <section id="application">
-        <Header />
-        <div className={styles.container}>
-          <Navbar />
-          <div className={styles.content}>
-            {this.props.children}
-          </div>
-        </div>
-        <Footer />
-      </section>
-    );
-  }
-}
+const App = (props) => (
+  <section id="application">
+    <Header />
+    <div className={styles.container}>
+      <Navbar />
+      <div className={styles.content}>
+        {props.children}
+      </div>
+    </div>
+    <Footer />
+  </section>
+);
+
+App.propTypes = {
+  children: React.PropTypes.node
+};
+
+export default App;
 ```
 
 #### Sample component (dumb component):
 ```javascript
 // src/components/Header/Header.js
-import styles             from './Header.styl';
-import React, {Component} from 'react';
+import styles from './Header.styl';
+import React from 'react';
 
-export default class Header extends Component {
-  render() {
-    return (
-      <header className={styles.header}>
-        <h1><a href='#/'>React Stylus Webpack boilerplate</a></h1>
-        <h2>A starter kit for creating applications using react and stylus</h2>
-        <a className={styles.stylusLogo} href='https://learnboost.github.io/stylus/'></a>
-        <a className={styles.reactLogo} href='https://facebook.github.io/react/'></a>
-      </header>
-    );
-  }
-}
+const Header = () => (
+  <header className={styles.header}>
+    <h1><a href="#/">React Stylus Webpack boilerplate</a></h1>
+    <h2>A starter kit for creating applications using react and stylus</h2>
+    <a className={styles.stylusLogo} href="https://learnboost.github.io/stylus/"></a>
+    <a className={styles.reactLogo} href="https://facebook.github.io/react/"></a>
+  </header>
+);
+
+export default Header;
 ```
 
 #### Sample style file:

@@ -1,5 +1,7 @@
-export About        from './About/About';
-export App          from './App/App';
-export Home         from './Home/Home';
-export NotFound     from './NotFound/NotFound';
-export StyleScoping from './StyleScoping/StyleScoping';
+import About from './About/About';
+import App from './App/App';
+import Home from './Home/Home';
+import NotFound from './NotFound/NotFound';
+import StyleScoping from './StyleScoping/StyleScoping';
+
+export { About, App, Home, NotFound, StyleScoping };

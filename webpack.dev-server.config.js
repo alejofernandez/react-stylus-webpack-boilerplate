@@ -1,15 +1,16 @@
-var path              = require('path');
-var webpack           = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var PORT              = 3000;
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-module.exports = {
+const PORT = 3000;
+
+export default {
   port: PORT,
   devtool: 'eval-source-map',
   entry: [
-    'webpack-dev-server/client?http://localhost:' + PORT,
-    'webpack/hot/only-dev-server',
-    './src/index'
+    './src/index',
+    'webpack/hot/dev-server',
+    `webpack-dev-server/client?http://localhost:${PORT}`
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -19,11 +20,13 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['react-hot', 'babel'],
+      loaders: ['babel'],
       include: path.join(__dirname, 'src')
     }, {
       test: /\.styl$/,
+      /* eslint-disable max-len */
       loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!stylus-loader'
+      /* eslint-enable max-len */
     }, {
       test: /\.woff$/,
       loader: 'file-loader?name=font/[name].[ext]?[hash]'
@@ -32,11 +35,11 @@ module.exports = {
       loader: 'file-loader?name=images/[name].[ext]?[hash]'
     }, {
       test: /\.md$/,
-      loader: "html!markdown"
+      loader: 'html!markdown'
     }]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new HtmlWebpackPlugin({title: 'React-Stylus-Webpack boilerplate'})
+    new HtmlWebpackPlugin({ template: 'src/index.html', inject: 'body' })
   ]
 };

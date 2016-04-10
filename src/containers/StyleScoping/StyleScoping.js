@@ -1,11 +1,6 @@
-import styles             from './StyleScoping.styl';
-import content            from './README.md';
-import React, {Component} from 'react';
+import content from './README.md';
+import React from 'react';
 
-export default class StyleScoping extends Component {
-  render() {
-    return (
-      <div dangerouslySetInnerHTML={{__html: content}} />
-    );
-  }
-}
+const StyleScoping = () => <div dangerouslySetInnerHTML={{ __html: content }} />;
+
+export default StyleScoping;

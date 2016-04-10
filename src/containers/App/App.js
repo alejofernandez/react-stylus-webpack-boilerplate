@@ -1,20 +1,22 @@
-import styles                   from './App.styl';
-import React, {Component}       from 'react';
-import {Footer, Header, Navbar} from '../../components';
+import styles from './App.styl';
+import React from 'react';
+import { Footer, Header, Navbar } from '../../components';
 
-export default class App extends Component {
-  render() {
-    return (
-      <section id="application">
-        <Header />
-        <div className={styles.container}>
-          <Navbar />
-          <div className={styles.content}>
-            {this.props.children}
-          </div>
-        </div>
-        <Footer />
-      </section>
-    );
-  }
-}
+const App = (props) => (
+  <section id="application">
+    <Header />
+    <div className={styles.container}>
+      <Navbar />
+      <div className={styles.content}>
+        {props.children}
+      </div>
+    </div>
+    <Footer />
+  </section>
+);
+
+App.propTypes = {
+  children: React.PropTypes.node
+};
+
+export default App;

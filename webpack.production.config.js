@@ -1,9 +1,9 @@
-var path              = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var webpack           = require('webpack');
+import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
 
-module.exports = {
+export default {
   devtool: 'source-map',
   entry: ['./src/index'],
   output: {
@@ -17,7 +17,9 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, {
       test: /\.styl$/,
+      /* eslint-disable max-len */
       loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!autoprefixer-loader!stylus-loader')
+      /* eslint-enable max-len */
     }, {
       test: /\.woff$/,
       loader: 'file-loader?name=font/[name].[ext]?[hash]'
@@ -30,8 +32,8 @@ module.exports = {
     }]
   },
   plugins: [
-    new ExtractTextPlugin('styles.css', {allChunks: false}),
-    new webpack.optimize.UglifyJsPlugin({minimize: true}),
-    new HtmlWebpackPlugin({title: 'React-Stylus-Webpack boilerplate'})
+    new ExtractTextPlugin('styles.css', { allChunks: false }),
+    new webpack.optimize.UglifyJsPlugin({ minimize: true }),
+    new HtmlWebpackPlugin({ template: 'src/index.html', inject: 'body' })
   ]
 };

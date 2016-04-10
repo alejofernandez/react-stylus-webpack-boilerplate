@@ -36,46 +36,46 @@
 #### Sample container (smart component):
 ```javascript
 // src/containers/App/App.js
-import styles                   from './App.styl';
-import React, {Component}       from 'react';
-import {Footer, Header, Navbar} from '../../components';
+import styles from './App.styl';
+import React from 'react';
+import { Footer, Header, Navbar } from '../../components';
 
-export default class App extends Component {
-  render() {
-    return (
-      <section id="application">
-        <Header />
-        <div className={styles.container}>
-          <Navbar />
-          <div className={styles.content}>
-            {this.props.children}
-          </div>
-        </div>
-        <Footer />
-      </section>
-    );
-  }
-}
+const App = (props) => (
+  <section id="application">
+    <Header />
+    <div className={styles.container}>
+      <Navbar />
+      <div className={styles.content}>
+        {props.children}
+      </div>
+    </div>
+    <Footer />
+  </section>
+);
+
+App.propTypes = {
+  children: React.PropTypes.node
+};
+
+export default App;
 ```
 
 #### Sample component (dumb component):
 ```javascript
 // src/components/Header/Header.js
-import styles             from './Header.styl';
-import React, {Component} from 'react';
+import styles from './Header.styl';
+import React from 'react';
 
-export default class Header extends Component {
-  render() {
-    return (
-      <header className={styles.header}>
-        <h1><a href='#/'>React Stylus Webpack boilerplate</a></h1>
-        <h2>A starter kit for creating applications using react and stylus</h2>
-        <a className={styles.stylusLogo} href='https://learnboost.github.io/stylus/'></a>
-        <a className={styles.reactLogo} href='https://facebook.github.io/react/'></a>
-      </header>
-    );
-  }
-}
+const Header = () => (
+  <header className={styles.header}>
+    <h1><a href="#/">React Stylus Webpack boilerplate</a></h1>
+    <h2>A starter kit for creating applications using react and stylus</h2>
+    <a className={styles.stylusLogo} href="https://learnboost.github.io/stylus/"></a>
+    <a className={styles.reactLogo} href="https://facebook.github.io/react/"></a>
+  </header>
+);
+
+export default Header;
 ```
 
 #### Sample style file:

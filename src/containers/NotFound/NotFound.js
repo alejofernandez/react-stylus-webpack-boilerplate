@@ -1,11 +1,6 @@
-import styles             from './NotFound.styl';
-import React, {Component} from 'react';
+import styles from './NotFound.styl';
+import React from 'react';
 
-export default class NotFound extends Component {
-  render() {
-    return (
-      <div className={styles.notFound}>
-      </div>
-    );
-  }
-}
+const NotFound = () => <div className={styles.notFound}></div>;
+
+export default NotFound;
