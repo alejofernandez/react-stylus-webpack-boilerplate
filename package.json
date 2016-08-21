@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A starter kit for creating applications using react and stylus, client side rendering, development and production configurations and hot reloading",
   "scripts": {
-    "dev": "gulp serve",
+    "serve": "gulp serve",
     "build": "gulp build",
     "deploy": "gulp deploy",
     "lint": "gulp lint"
