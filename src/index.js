@@ -10,18 +10,9 @@ function boot() {
 
   domready(() => {
     rootElement = document.getElementById('app-root');
-    render();
+    hotReload();
     setupHotModuleReload();
   });
-
-  function render() {
-    const RootComponent = require('./RootComponent').default;
-    ReactDOM.render(<RootComponent />, rootElement);
-  }
-
-  function setupHotModuleReload() {
-    module.hot && module.hot.accept('./RootComponent', () => setTimeout(hotReload));
-  }
 
   function hotReload() {
     try {
@@ -29,6 +20,15 @@ function boot() {
     } catch (error) {
       renderError(error);
     }
+  }
+
+  function setupHotModuleReload() {
+    module.hot && module.hot.accept('./RootComponent', () => setTimeout(hotReload));
+  }
+
+  function render() {
+    const RootComponent = require('./RootComponent').default;
+    ReactDOM.render(<RootComponent />, rootElement);
   }
 
   function renderError(error) {
