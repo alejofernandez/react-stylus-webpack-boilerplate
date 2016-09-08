@@ -27,6 +27,9 @@ export default {
       test: /\.png$/,
       loader: 'file-loader?name=images/[name].[ext]?[hash]'
     }, {
+      test: /\.jade$/,
+      loader: 'jade-react-loader'
+    }, {
       test: /\.md$/,
       loader: 'html!markdown'
     }]
